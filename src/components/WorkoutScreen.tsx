@@ -27,6 +27,7 @@ import {
 import { useFitProStore } from "@/lib/store";
 import { exerciseLibrary } from "@/lib/sample-data";
 import type { WorkoutType, Exercise, WorkoutSession } from "@/lib/types";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -254,6 +255,36 @@ const CALORIES_PER_MINUTE: Record<WorkoutType, number> = {
   custom: 7,
 };
 
+// ─── Exercise & category image maps ────────────────────────────────────────────
+
+const exerciseImages: Record<string, string> = {
+  pushups: "/images/exercises/pushups.svg",
+  squats: "/images/exercises/squats.svg",
+  plank: "/images/exercises/plank.svg",
+  yoga: "/images/exercises/yoga.svg",
+  cardio: "/images/exercises/cardio.svg",
+  stretching: "/images/exercises/stretching.svg",
+  jumping_jacks: "/images/exercises/cardio.svg",
+  mountain_climbers: "/images/exercises/cardio.svg",
+  burpees: "/images/exercises/cardio.svg",
+  bicycle_crunches: "/images/exercises/plank.svg",
+  downward_dog: "/images/exercises/yoga.svg",
+  warrior_pose: "/images/exercises/yoga.svg",
+  high_knees: "/images/exercises/cardio.svg",
+  glute_bridges: "/images/exercises/squats.svg",
+  lunges: "/images/exercises/squats.svg",
+};
+
+const categoryImages: Record<string, string> = {
+  strength: "/images/exercises/pushups.svg",
+  cardio: "/images/exercises/cardio.svg",
+  running: "/images/exercises/cardio.svg",
+  cycling: "/images/exercises/cardio.svg",
+  yoga: "/images/exercises/yoga.svg",
+  hiit: "/images/exercises/cardio.svg",
+  custom: "/images/exercises/stretching.svg",
+};
+
 // ─── Heart rate zone helpers ──────────────────────────────────────────────────
 
 interface HeartRateZone {
@@ -379,6 +410,15 @@ function WorkoutSelectionView({
               onClick={() => handleQuickStart(cat.type)}
               className={`flex flex-col items-center gap-3 p-4 rounded-2xl border border-border ${cat.bgColor} transition-colors hover:brightness-95 active:brightness-90 cursor-pointer`}
             >
+              {categoryImages[cat.type] && (
+                <Image
+                  src={categoryImages[cat.type]}
+                  width={60}
+                  height={60}
+                  alt={cat.label}
+                  className="rounded-xl"
+                />
+              )}
               <div
                 className={`w-14 h-14 rounded-full flex items-center justify-center bg-white/80 dark:bg-white/10 shadow-sm`}
               >
@@ -425,15 +465,33 @@ function WorkoutSelectionView({
           {/* Exercise list */}
           <div className="space-y-2">
             {filteredExercises.length === 0 && (
-              <p className="text-center text-muted-foreground py-6">
-                No exercises found
-              </p>
+              <div className="flex flex-col items-center justify-center py-6">
+                <Image
+                  src="/images/icons/empty-workout.svg"
+                  width={200}
+                  height={140}
+                  alt="No workouts yet"
+                  className="mb-4 opacity-60"
+                />
+                <p className="text-center text-muted-foreground">
+                  No exercises found
+                </p>
+              </div>
             )}
             {filteredExercises.map((exercise) => (
               <Card key={exercise.id} size="sm">
                 <CardHeader>
                   <div className="flex items-center justify-between w-full">
                     <div className="flex items-center gap-2 min-w-0">
+                      {exerciseImages[exercise.id] && (
+                        <Image
+                          src={exerciseImages[exercise.id]}
+                          width={80}
+                          height={80}
+                          alt={exercise.name}
+                          className="rounded-xl shrink-0"
+                        />
+                      )}
                       <CardTitle className="truncate">{exercise.name}</CardTitle>
                       <Badge variant="outline" className="shrink-0 text-[10px]">
                         {exercise.category}

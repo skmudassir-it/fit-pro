@@ -42,6 +42,7 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import type { Meal } from "@/lib/types";
+import Image from "next/image";
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -269,13 +270,14 @@ function EmptyState() {
       transition={{ duration: 0.5, ease: "easeOut" as const }}
       className="flex flex-col items-center justify-center py-16 px-6 text-center"
     >
-      {/* Friendly illustration */}
-      <div className="w-28 h-28 rounded-full bg-coral-100 dark:bg-coral-900/20 bg-[#FFE8E8] dark:bg-[#FF6B6B]/20 flex items-center justify-center mb-6">
-        <FontAwesomeIcon
-          icon={faUtensils}
-          className="text-5xl text-[#FF6B6B] dark:text-[#FF8E8E]"
-        />
-      </div>
+      {/* Empty meals illustration */}
+      <Image
+        src="/images/icons/empty-meals.svg"
+        width={200}
+        height={140}
+        alt="No meals yet"
+        className="mx-auto mb-6"
+      />
       <h2 className="text-xl font-bold text-foreground mb-2">
         No meals logged today
       </h2>

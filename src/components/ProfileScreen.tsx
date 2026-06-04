@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useFitProStore } from "@/lib/store";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -168,6 +169,18 @@ function TargetStepper({
 
 function AchievementBadge({ a }: { a: Achievement }) {
   const unlocked = a.unlockedAt != null;
+
+  const achievementImgMap: Record<string, string> = {
+    first_workout: "/images/achievements/first-workout.svg",
+    streak_3: "/images/achievements/streak.svg",
+    streak_7: "/images/achievements/streak.svg",
+    steps_10k: "/images/achievements/steps.svg",
+    calories_500: "/images/achievements/first-workout.svg",
+    water_8: "/images/achievements/water.svg",
+    workout_30min: "/images/achievements/first-workout.svg",
+    streak_14: "/images/achievements/streak.svg",
+  };
+
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
@@ -178,8 +191,14 @@ function AchievementBadge({ a }: { a: Achievement }) {
           : "bg-muted/50 border border-muted-foreground/15 opacity-50"
       }`}
     >
-      <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-2xl">
-        {a.icon}
+      <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-2xl overflow-hidden">
+        <Image
+          src={achievementImgMap[a.id] || "/images/achievements/first-workout.svg"}
+          width={40}
+          height={40}
+          alt={a.name}
+          className="rounded-lg"
+        />
       </div>
       <span className="text-xs font-semibold text-foreground text-center leading-tight">
         {a.name}

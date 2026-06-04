@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useFitProStore } from "@/lib/store";
 import { Button } from "@/components/ui/button";
@@ -22,21 +23,21 @@ import type { FitnessGoal, DailyTargets } from "@/lib/types";
 
 const SLIDES = [
   {
-    emoji: "💪",
+    image: "/images/onboarding/welcome.svg",
     title: "Welcome to FitPro",
     subtitle: "Your personal fitness companion designed for you",
     description:
       "Whether you're staying active, building strength, or training for an event — we've got you covered.",
   },
   {
-    emoji: "📊",
+    image: "/images/onboarding/track.svg",
     title: "Track Everything",
     subtitle: "All your fitness data in one place",
     description:
       "Workouts, steps, nutrition, weight, and progress — tracked simply and clearly.",
   },
   {
-    emoji: "🔥",
+    image: "/images/onboarding/motivate.svg",
     title: "Stay Motivated",
     subtitle: "Streaks, achievements, and daily encouragement",
     description:
@@ -462,9 +463,14 @@ export function OnboardingScreen() {
                     transition={{ duration: 0.3, ease: "easeOut" as const }}
                     className="flex flex-col items-center text-center gap-6 w-full"
                   >
-                    <div className="text-7xl mb-2">
-                      {SLIDES[slideIndex].emoji}
-                    </div>
+                    <Image
+                      src={SLIDES[slideIndex].image}
+                      alt={SLIDES[slideIndex].title}
+                      width={192}
+                      height={192}
+                      className="w-48 h-48 mx-auto mb-4"
+                      priority
+                    />
                     <h1 className="text-3xl font-bold text-foreground tracking-tight">
                       {SLIDES[slideIndex].title}
                     </h1>

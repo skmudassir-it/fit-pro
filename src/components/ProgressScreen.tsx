@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFire,
-  faTrophy,
   faWeightScale,
   faShoePrints,
   faCalendarCheck,
@@ -27,6 +26,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { useFitProStore } from "@/lib/store";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 // ---------------------------------------------------------------------------
 // Custom Tooltip – senior-friendly large text
@@ -114,6 +115,20 @@ export function ProgressScreen() {
     "bg-teal-400 dark:bg-teal-700/70",
     "bg-teal-500 dark:bg-teal-500/80",
   ];
+
+  const achievementImage = (id: string) => {
+    const map: Record<string, string> = {
+      first_workout: "/images/achievements/first-workout.svg",
+      streak_3: "/images/achievements/streak.svg",
+      streak_7: "/images/achievements/streak.svg",
+      steps_10k: "/images/achievements/steps.svg",
+      calories_500: "/images/achievements/first-workout.svg",
+      water_8: "/images/achievements/water.svg",
+      workout_30min: "/images/achievements/first-workout.svg",
+      streak_14: "/images/achievements/streak.svg",
+    };
+    return map[id] || "/images/achievements/first-workout.svg";
+  };
 
   // ── Render ────────────────────────────────────────────────────────────
 
@@ -434,7 +449,7 @@ export function ProgressScreen() {
         transition={{ duration: 0.4, delay: 0.25, ease: "easeOut" as const }}
       >
         <div className="flex items-center gap-2 mb-3">
-          <FontAwesomeIcon icon={faTrophy} className="text-xl text-chart-5" />
+          <Image src="/images/achievements/first-workout.svg" width={28} height={28} alt="Achievements" className="text-xl text-chart-5" />
           <h2 className="text-lg font-semibold text-foreground">
             Achievements
           </h2>
@@ -471,14 +486,9 @@ export function ProgressScreen() {
                         }`}
                       >
                         {unlocked ? (
-                          <FontAwesomeIcon
-                            icon={faTrophy}
-                            className="text-chart-1"
-                          />
+                          <Image src={achievementImage(achievement.id)} width={48} height={48} alt={achievement.name} className="rounded-lg" />
                         ) : (
-                          <span className="grayscale opacity-60">
-                            {achievement.icon}
-                          </span>
+                          <Image src={achievementImage(achievement.id)} width={48} height={48} alt={achievement.name} className="rounded-lg opacity-40" />
                         )}
                       </div>
 
