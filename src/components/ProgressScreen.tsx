@@ -118,16 +118,16 @@ export function ProgressScreen() {
 
   const achievementImage = (id: string) => {
     const map: Record<string, string> = {
-      first_workout: "/images/achievements/first-workout.svg",
-      streak_3: "/images/achievements/streak.svg",
-      streak_7: "/images/achievements/streak.svg",
-      steps_10k: "/images/achievements/steps.svg",
-      calories_500: "/images/achievements/first-workout.svg",
-      water_8: "/images/achievements/water.svg",
-      workout_30min: "/images/achievements/first-workout.svg",
-      streak_14: "/images/achievements/streak.svg",
+      first_workout: "/images/achievements/first-workout.png",
+      streak_3: "/images/achievements/streak.png",
+      streak_7: "/images/achievements/streak.png",
+      steps_10k: "/images/achievements/steps.png",
+      calories_500: "/images/achievements/first-workout.png",
+      water_8: "/images/achievements/water.png",
+      workout_30min: "/images/achievements/first-workout.png",
+      streak_14: "/images/achievements/streak.png",
     };
-    return map[id] || "/images/achievements/first-workout.svg";
+    return map[id] || "/images/achievements/first-workout.png";
   };
 
   // ── Render ────────────────────────────────────────────────────────────
@@ -449,7 +449,7 @@ export function ProgressScreen() {
         transition={{ duration: 0.4, delay: 0.25, ease: "easeOut" as const }}
       >
         <div className="flex items-center gap-2 mb-3">
-          <Image src="/images/achievements/first-workout.svg" width={28} height={28} alt="Achievements" className="text-xl text-chart-5" />
+          <Image src="/images/achievements/first-workout.png" width={28} height={28} alt="Achievements" className="text-xl text-chart-5" />
           <h2 className="text-lg font-semibold text-foreground">
             Achievements
           </h2>

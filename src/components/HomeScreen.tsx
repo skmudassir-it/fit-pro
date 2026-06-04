@@ -235,7 +235,7 @@ export function HomeScreen() {
 
       {/* Activity rings illustration */}
       <div className="flex justify-center -mb-2">
-        <Image src="/images/icons/activity-rings.svg" width={200} height={100} alt="" priority />
+        <Image src="/images/icons/activity-rings.png" width={200} height={100} alt="" priority />
       </div>
 
       {/* ================================================================= */}
@@ -343,7 +343,7 @@ export function HomeScreen() {
             <span className="text-sm text-muted-foreground font-medium">
               Resting Heart Rate
             </span>
-            <Image src="/images/icons/heart-rate.svg" width={60} height={60} alt="" className="mx-auto" />
+            <Image src="/images/icons/heart-rate.png" width={60} height={60} alt="" className="mx-auto" />
             <div className="flex items-baseline gap-1">
               <span className="text-3xl font-bold text-foreground count-up">
                 {todayStats.heartRate}

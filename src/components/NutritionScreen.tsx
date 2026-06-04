@@ -272,7 +272,7 @@ function EmptyState() {
     >
       {/* Empty meals illustration */}
       <Image
-        src="/images/icons/empty-meals.svg"
+        src="/images/icons/empty-meals.png"
         width={200}
         height={140}
         alt="No meals yet"

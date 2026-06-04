@@ -23,21 +23,21 @@ import type { FitnessGoal, DailyTargets } from "@/lib/types";
 
 const SLIDES = [
   {
-    image: "/images/onboarding/welcome.svg",
+    image: "/images/onboarding/welcome.png",
     title: "Welcome to FitPro",
     subtitle: "Your personal fitness companion designed for you",
     description:
       "Whether you're staying active, building strength, or training for an event — we've got you covered.",
   },
   {
-    image: "/images/onboarding/track.svg",
+    image: "/images/onboarding/track.png",
     title: "Track Everything",
     subtitle: "All your fitness data in one place",
     description:
       "Workouts, steps, nutrition, weight, and progress — tracked simply and clearly.",
   },
   {
-    image: "/images/onboarding/motivate.svg",
+    image: "/images/onboarding/motivate.png",
     title: "Stay Motivated",
     subtitle: "Streaks, achievements, and daily encouragement",
     description:

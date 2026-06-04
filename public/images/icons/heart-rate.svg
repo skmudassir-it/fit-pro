@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <rect width="200" height="200" fill="#fef2f2" rx="16"/>
-  <path d="M40 80 L70 80 L85 50 L100 110 L115 60 L130 80 L160 80" fill="none" stroke="#e04e3d" stroke-width="4" stroke-linecap="round"/>
-  <text x="100" y="150" text-anchor="middle" font-size="20" fill="#e04e3d">❤️ 72 bpm</text>
-</svg>

@@ -171,14 +171,14 @@ function AchievementBadge({ a }: { a: Achievement }) {
   const unlocked = a.unlockedAt != null;
 
   const achievementImgMap: Record<string, string> = {
-    first_workout: "/images/achievements/first-workout.svg",
-    streak_3: "/images/achievements/streak.svg",
-    streak_7: "/images/achievements/streak.svg",
-    steps_10k: "/images/achievements/steps.svg",
-    calories_500: "/images/achievements/first-workout.svg",
-    water_8: "/images/achievements/water.svg",
-    workout_30min: "/images/achievements/first-workout.svg",
-    streak_14: "/images/achievements/streak.svg",
+    first_workout: "/images/achievements/first-workout.png",
+    streak_3: "/images/achievements/streak.png",
+    streak_7: "/images/achievements/streak.png",
+    steps_10k: "/images/achievements/steps.png",
+    calories_500: "/images/achievements/first-workout.png",
+    water_8: "/images/achievements/water.png",
+    workout_30min: "/images/achievements/first-workout.png",
+    streak_14: "/images/achievements/streak.png",
   };
 
   return (
@@ -193,7 +193,7 @@ function AchievementBadge({ a }: { a: Achievement }) {
     >
       <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center text-2xl overflow-hidden">
         <Image
-          src={achievementImgMap[a.id] || "/images/achievements/first-workout.svg"}
+          src={achievementImgMap[a.id] || "/images/achievements/first-workout.png"}
           width={40}
           height={40}
           alt={a.name}

@@ -258,31 +258,31 @@ const CALORIES_PER_MINUTE: Record<WorkoutType, number> = {
 // ─── Exercise & category image maps ────────────────────────────────────────────
 
 const exerciseImages: Record<string, string> = {
-  pushups: "/images/exercises/pushups.svg",
-  squats: "/images/exercises/squats.svg",
-  plank: "/images/exercises/plank.svg",
-  yoga: "/images/exercises/yoga.svg",
-  cardio: "/images/exercises/cardio.svg",
-  stretching: "/images/exercises/stretching.svg",
-  jumping_jacks: "/images/exercises/cardio.svg",
-  mountain_climbers: "/images/exercises/cardio.svg",
-  burpees: "/images/exercises/cardio.svg",
-  bicycle_crunches: "/images/exercises/plank.svg",
-  downward_dog: "/images/exercises/yoga.svg",
-  warrior_pose: "/images/exercises/yoga.svg",
-  high_knees: "/images/exercises/cardio.svg",
-  glute_bridges: "/images/exercises/squats.svg",
-  lunges: "/images/exercises/squats.svg",
+  pushups: "/images/exercises/pushups.png",
+  squats: "/images/exercises/squats.png",
+  plank: "/images/exercises/plank.png",
+  yoga: "/images/exercises/yoga.png",
+  cardio: "/images/exercises/cardio.png",
+  stretching: "/images/exercises/stretching.png",
+  jumping_jacks: "/images/exercises/cardio.png",
+  mountain_climbers: "/images/exercises/cardio.png",
+  burpees: "/images/exercises/cardio.png",
+  bicycle_crunches: "/images/exercises/plank.png",
+  downward_dog: "/images/exercises/yoga.png",
+  warrior_pose: "/images/exercises/yoga.png",
+  high_knees: "/images/exercises/cardio.png",
+  glute_bridges: "/images/exercises/squats.png",
+  lunges: "/images/exercises/squats.png",
 };
 
 const categoryImages: Record<string, string> = {
-  strength: "/images/exercises/pushups.svg",
-  cardio: "/images/exercises/cardio.svg",
-  running: "/images/exercises/cardio.svg",
-  cycling: "/images/exercises/cardio.svg",
-  yoga: "/images/exercises/yoga.svg",
-  hiit: "/images/exercises/cardio.svg",
-  custom: "/images/exercises/stretching.svg",
+  strength: "/images/exercises/pushups.png",
+  cardio: "/images/exercises/cardio.png",
+  running: "/images/exercises/cardio.png",
+  cycling: "/images/exercises/cardio.png",
+  yoga: "/images/exercises/yoga.png",
+  hiit: "/images/exercises/cardio.png",
+  custom: "/images/exercises/stretching.png",
 };
 
 // ─── Heart rate zone helpers ──────────────────────────────────────────────────
@@ -467,7 +467,7 @@ function WorkoutSelectionView({
             {filteredExercises.length === 0 && (
               <div className="flex flex-col items-center justify-center py-6">
                 <Image
-                  src="/images/icons/empty-workout.svg"
+                  src="/images/icons/empty-workout.png"
                   width={200}
                   height={140}
                   alt="No workouts yet"
